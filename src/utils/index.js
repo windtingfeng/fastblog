@@ -115,3 +115,12 @@ export function param2Obj(url) {
   })
   return obj
 }
+
+export function getYear(date) {
+  const olddate = new Date(date)
+  const Year = olddate.getFullYear()
+  const Month = olddate.getMonth() + 1
+  const Day = olddate.getDate()
+  const newdate = Year + '-' + Month + '-' + Day
+  return newdate
+}

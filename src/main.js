@@ -4,7 +4,9 @@ import 'normalize.css/normalize.css' // A modern alternative to CSS resets
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import locale from 'element-ui/lib/locale/lang/en' // lang i18n
+import locale from 'element-ui/lib/locale/lang/zh-CN' // lang i18n
+// 引入BootStrap
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import '@/styles/index.scss' // global css
 
@@ -14,6 +16,11 @@ import router from './router'
 
 import '@/icons' // icon
 import '@/permission' // permission control
+
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+// use
+Vue.use(mavonEditor)
 
 /**
  * If you don't want to use mock-server

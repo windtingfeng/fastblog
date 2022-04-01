@@ -11,7 +11,17 @@
         :active-text-color="variables.menuActiveText"
         :collapse-transition="false"
         mode="vertical"
+        router
       >
+        <el-menu-item
+          style="background-color:#000"
+          index="/index"
+        >
+          <div>
+            <img src="../../../assets/logo.png" width="40px" alt="">
+            <span>blog</span>
+          </div>
+        </el-menu-item>
         <sidebar-item v-for="route in routes" :key="route.path" :item="route" :base-path="route.path" />
       </el-menu>
     </el-scrollbar>
@@ -31,7 +41,9 @@ export default {
       'sidebar'
     ]),
     routes() {
-      return this.$router.options.routes
+      return this.$router.options.routes.filter(item => {
+        return item.children
+      })
     },
     activeMenu() {
       const route = this.$route
@@ -51,6 +63,9 @@ export default {
     isCollapse() {
       return !this.sidebar.opened
     }
+  },
+  mounted() {
+    console.log(this.routes)
   }
 }
 </script>

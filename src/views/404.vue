@@ -28,6 +28,15 @@ export default {
     message() {
       return 'The webmaster said that you can not enter this page...'
     }
+  },
+  watch: {
+    $route(to, from) {
+      console.log(to)
+      console.log(from)
+    }
+  },
+  created() {
+    console.log(this.$route)
   }
 }
 </script>
